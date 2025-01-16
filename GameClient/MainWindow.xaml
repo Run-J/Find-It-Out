@@ -1,0 +1,61 @@
+﻿<Window x:Class="GameClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Word Guessing Game" Height="460" Width="800"
+        ResizeMode="NoResize">
+    <Grid Margin="0">
+
+        <!-- connection settings -->
+        <GroupBox Header="Connection Settings" Margin="10,221,418,10" 
+                  Foreground="Blue" BorderBrush="BlueViolet" BorderThickness="2px">
+            <StackPanel Margin="10,0,-2,0">
+                <StackPanel Orientation="Horizontal" Margin="5" Width="340">
+                    <Label Content="IP Address:" Width="100"/>
+                    <TextBox Name="IpAddressTextBox" Width="200" HorizontalAlignment="Left"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <Label Content="Port:" Width="100"/>
+                    <TextBox x:Name="PortTextBox" Width="89"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <Label Content="Player Name:" Width="100"/>
+                    <TextBox Name="PlayerNameTextBox" Width="200"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <Label Content="Game Time (sec):" Width="100"/>
+                    <TextBox Name="GameTimeTextBox" Width="100"/>
+                </StackPanel>
+                <Button Name="ConnectButton" Content="Connect" Click="ConnectButton_Click" Margin="5"/>
+            </StackPanel>
+        </GroupBox>
+
+        <!-- game information -->
+        <GroupBox Header="Game Info" Margin="10,80,10,228" BorderBrush="Chocolate" BorderThickness="2px">
+            <StackPanel>
+                <TextBlock Name="GameStringTextBlock" Text="Game String: " TextWrapping="Wrap" Margin="8"/>
+                <TextBlock Name="RemainingWordsTextBlock" Text="Remaining Words: " Margin="8"/>
+                <TextBlock Name="ServerMessageTextBlock" Text="Game Messages: " TextWrapping="Wrap" Margin="8"/>
+            </StackPanel>
+        </GroupBox>
+
+        <!--timer-->
+        <GroupBox Header="Timer" Margin="299,10,356,363" Foreground="Red" BorderBrush="Red" BorderThickness="2px">
+            <TextBlock Name="TimeLeftBlock" FontSize="16" FontWeight="Bold" Margin="28,5,17,0" Height="36"/>
+        </GroupBox>
+
+        <!-- user interaction -->
+        <GroupBox Header="Player Interaction" Margin="400,221,75,106" Foreground="Green" BorderBrush="Green" BorderThickness="2px">
+            <StackPanel Height="80">
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <Label Content="Your Guess:" Width="100"/>
+                    <TextBox Name="GuessTextBox" Width="170"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <Button Name="SendGuessButton" Content="Send Guess" Click="SendGuessButton_Click" Width="100"/>
+                    <Button Name="QuitGameButton" Content="Quit Game" Click="QuitGameButton_Click" Width="100" Margin="10,0,0,0"/>
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+
+    </Grid>
+</Window>
